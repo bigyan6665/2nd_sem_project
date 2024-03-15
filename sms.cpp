@@ -37,38 +37,27 @@ void student::AddStudent()
     do
     {
         student obj;
-
         system("cls");
-
+        cin.ignore();
         cout << "\t\t\t\t\t<== Add Student Information ==>\n\n"
              << endl;
-
         cout << "\n\t\tName: ";
-        cin.ignore();
         cin.getline(obj.name, 50);
-
         cout << "\n\t\tId no: ";
         cin >> obj.id;
-
-        cout << "\n\t\tCourse and Semester: ";
         cin.ignore();
+        cout << "\n\t\tCourse and Semester: ";
         cin.getline(obj.year, 50);
-
         cout << "\n\t\tAddress: ";
         cin.getline(obj.address, 50);
-
         cout << "\n\t\tEmail: ";
         cin.getline(obj.email, 50);
-
         cout << "\n\t\tPhone no: ";
         cin.getline(obj.phonenumber, 50);
-
         cout << "\n\t\tGPA: ";
         cin >> obj.gpa;
-
         cout << "\n\t\tPaid Amount: ";
         cin >> obj.paidAmount;
-
         obj.totalAmount = 790000; // fixed amount
         obj.dueAmount = obj.totalAmount - obj.paidAmount;
 
@@ -96,14 +85,10 @@ void student::AddStudent()
 void student::DisplayAllStudent()
 {
     student obj;
-
     system("cls");
-
     int recordsfound = 0;
-
     cout << "\t\t\t\t\t<== Student Records ==>\n\n"
          << endl;
-
     ifstream fin;
     fin.open(filename.c_str(), ios::binary);
     if (!fin)
@@ -190,7 +175,7 @@ void student::EditStudentDetails()
          << endl;
 
     int id = 0, found = 0, updated = 0;
-    cout << "\t\tEnter Id to edit: " << endl;
+    cout << "\t\tEnter Id to edit: ";
     cin >> id;
 
     student updated_student;
@@ -246,51 +231,51 @@ void student::EditStudentDetails()
         switch (choice)
         {
         case 1:
-            cout << "\n\t\tEnter Updated Name: " << endl;
-            cin.ignore();
+            // cin.ignore();
+            cout << "\n\t\tEnter Updated Name: ";
             cin.getline(updated_student.name, 50);
             updated = 1;
             break;
 
         case 2:
-            cout << "\n\t\tEnter Updated Id: " << endl;
+            cout << "\n\t\tEnter Updated Id: ";
             cin >> updated_student.id;
             updated = 1;
             break;
 
         case 3:
-            cout << "\n\t\tEnter Updated Semester: " << endl;
-            cin.ignore();
+            // cin.ignore();
+            cout << "\n\t\tEnter Updated Semester: ";
             cin.getline(updated_student.year, 50);
             updated = 1;
             break;
 
         case 4:
-            cout << "\n\t\tEnter Updated Address: " << endl;
+            cout << "\n\t\tEnter Updated Address: ";
             cin.getline(updated_student.address, 50);
             updated = 1;
             break;
 
         case 5:
-            cout << "\n\t\tEnter Updated Email: " << endl;
+            cout << "\n\t\tEnter Updated Email: ";
             cin.getline(updated_student.email, 50);
             updated = 1;
             break;
 
         case 6:
-            cout << "\n\t\tEnter Updated Phone number: " << endl;
+            cout << "\n\t\tEnter Updated Phone number: ";
             cin.getline(updated_student.phonenumber, 50);
             updated = 1;
             break;
 
         case 7:
-            cout << "\n\t\tEnter Updated GPA: " << endl;
+            cout << "\n\t\tEnter Updated GPA: ";
             cin >> updated_student.gpa;
             updated = 1;
             break;
 
         case 8:
-            cout << "\n\t\tEnter Updated Payment Amount: " << endl;
+            cout << "\n\t\tEnter Updated Payment Amount: ";
             cin >> updated_student.paidAmount;
             updated_student.dueAmount = updated_student.totalAmount - updated_student.paidAmount;
             updated = 1;
